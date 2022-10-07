@@ -2,9 +2,6 @@
 @use "mixins";
 @use "typography";
 
-
-
-
 .container {
     position: relative;
     overflow: hidden;
@@ -27,7 +24,6 @@
             position: relative;
 
             @include mixins.arrow__btn(white)
-
         }
 
         .welcome {
@@ -38,18 +34,18 @@
             justify-content: center;
             flex-grow: 1;
 
-
             .welcome__text--br {
                 @include mixins.for-size(desktop) {
                     display: inline;
                 }
+
                 display: block;
 
             }
 
         }
 
-        .welcome__h1 {
+        .welcome__header {
             color: white;
             font-size: 1.7em;
             font-weight: bold;
@@ -58,12 +54,11 @@
 
     }
 
-
-
     .aboutus {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+
         .footer__circle {
             position: relative;
             display: flex;
@@ -73,8 +68,8 @@
             margin-bottom: 0;
 
             @include mixins.arrow__btn(black)
-
         }
+
         margin-bottom: 5%;
         @include mixins.portraittest(60%);
 
@@ -84,7 +79,6 @@
             flex-direction: row;
             justify-content: space-evenly;
 
-
         }
 
         h2 {
@@ -93,6 +87,7 @@
         }
 
     }
+
     .contactus {
 
         position: relative;
@@ -118,6 +113,5 @@
             align-items: flex-start;
 
         }
-
     }
 }

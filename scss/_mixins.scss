@@ -6,7 +6,6 @@
 
 }
 
-
 @mixin for-size($breakpoint) {
 
   @if $breakpoint ==tablet {
@@ -21,7 +20,6 @@
     }
   }
 
-
 }
 
 @mixin portraittest($width) {
@@ -32,7 +30,6 @@
     margin: 0;
 
   }
-
 
   .figure__portrait {
     width: 100%;
@@ -45,7 +42,6 @@
       width: 35%;
       justify-content: space-between;
     }
-
 
   }
 
@@ -66,7 +62,6 @@
 
     }
 
-
   }
 
   img {
@@ -80,8 +75,6 @@
 
 @mixin top-nav() {
 
-
-
   .top-nav {
     position: absolute;
     display: flex;
@@ -90,7 +83,6 @@
     color: white;
     justify-content: flex-end;
     align-items: flex-end;
-    
 
     & .menu {
       font-size: 1.3em;
@@ -102,7 +94,7 @@
       width: 100%;
       justify-self: center;
       align-self: center;
-      padding:0;
+      padding: 0;
       margin: 0;
 
     }
@@ -124,7 +116,6 @@
       display: none;
 
     }
-
 
     .menu-button,
     .menu-button::before,
@@ -206,7 +197,7 @@
         display: flex;
         height: auto;
         align-items: center;
-      
+
       }
 
 
@@ -224,22 +215,15 @@
         display: none;
       }
 
-
     }
-
 
   }
 
 }
-@mixin arrow__btn($color)
- {
+
+@mixin arrow__btn($color) {
   font-size: 1.8em;
-  border-radius:50%;
+  border-radius: 50%;
   color: $color;
   background-color: rgba(0, 0, 0, 0);
 }
-
-
-
-
-
