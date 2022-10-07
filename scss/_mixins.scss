@@ -1,0 +1,245 @@
+@use "variables";
+
+@mixin bg-image() {
+  background-image: url("assets/images/background.jpg");
+  background-size: cover;
+
+}
+
+
+@mixin for-size($breakpoint) {
+
+  @if $breakpoint ==tablet {
+    @media (min-width: 700px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==desktop {
+    @media (min-width: 900px) {
+      @content;
+    }
+  }
+
+
+}
+
+@mixin portraittest($width) {
+
+  figure {
+
+    row-gap: 3vh;
+    margin: 0;
+
+  }
+
+
+  .figure__portrait {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include for-size(desktop) {
+      width: 35%;
+      justify-content: space-between;
+    }
+
+
+  }
+
+  figcaption {
+    width: 60%;
+    padding: 6%;
+    background-color: lightgray;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: left;
+
+    & i {
+      font-size: 2.5rem;
+      display: inline-block;
+      transform: rotate(180deg);
+      margin: 0;
+      padding: 0;
+
+    }
+
+
+  }
+
+  img {
+
+    width: $width;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+}
+
+@mixin top-nav() {
+
+
+
+  .top-nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+
+    & .menu {
+      font-size: 1.3em;
+      flex-direction: column;
+      list-style-type: none;
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 100%;
+      justify-self: center;
+      align-self: center;
+      padding:0;
+      margin: 0;
+
+    }
+
+    & .menu-button-container {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      position: absolute;
+      z-index: 1;
+      top: 30px;
+      right: 30px;
+    }
+
+    #menu-toggle {
+      display: none;
+
+    }
+
+
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+    }
+
+    .menu-button::before {
+      content: '';
+      margin-top: -8px;
+    }
+
+    .menu-button::after {
+      content: '';
+      margin-top: 8px;
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::before {
+      margin-top: 0px;
+      transform: rotate(405deg);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::after {
+      margin-top: 0px;
+      transform: rotate(-405deg);
+    }
+
+    #menu-toggle~.menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+
+    }
+
+    #menu-toggle:checked~.menu li {
+      height: 2em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    }
+
+    .menu>li {
+
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      width: 100%;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .menu>li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+
+    @include for-size(desktop) {
+
+
+      .menu {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+
+      }
+
+      .menu>li {
+        display: flex;
+        height: auto;
+        align-items: center;
+      
+      }
+
+
+      #menu-toggle~.menu li {
+
+        overflow: visible;
+        padding: 1em;
+      }
+
+
+      .menu-button,
+      .menu-button::before,
+      .menu-button::after {
+
+        display: none;
+      }
+
+
+    }
+
+
+  }
+
+}
+@mixin arrow__btn($color)
+ {
+  font-size: 1.8em;
+  border-radius:50%;
+  color: $color;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+

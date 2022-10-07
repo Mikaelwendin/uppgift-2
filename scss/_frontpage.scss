@@ -1,0 +1,123 @@
+@use "variables";
+@use "mixins";
+@use "typography";
+
+
+
+
+.container {
+    position: relative;
+    overflow: hidden;
+    @include mixins.top-nav;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Times New Roman', Times, serif;
+        background-image: url("/assets/images/background.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+
+
+        .header__circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            @include mixins.arrow__btn(white)
+
+        }
+
+        .welcome {
+            font-size: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+
+
+            .welcome__text--br {
+                @include mixins.for-size(desktop) {
+                    display: inline;
+                }
+                display: block;
+
+            }
+
+        }
+
+        .welcome__h1 {
+            color: white;
+            font-size: 1.7em;
+            font-weight: bold;
+
+        }
+
+    }
+
+
+
+    .aboutus {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        .footer__circle {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 0;
+
+            @include mixins.arrow__btn(black)
+
+        }
+        margin-bottom: 5%;
+        @include mixins.portraittest(60%);
+
+        @include mixins.for-size(desktop) {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+
+        }
+
+        h2 {
+            width: 100%;
+            text-align: center;
+        }
+
+    }
+    .contactus {
+
+        position: relative;
+        display: flex;
+        background-color: black;
+        color: white;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+
+        }
+
+        @include mixins.for-size(desktop) {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+
+        }
+
+    }
+}
