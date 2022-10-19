@@ -97,6 +97,11 @@
         justify-content: flex-end;
         align-items:center;
         width: 100%;
+        font-size: 1.3rem;
+        &__info {
+            padding: 2%;
+            width: max-content;
+        }
         @include mixins.for-size(desktop) {
             flex-direction: row;
             justify-content: space-between;
